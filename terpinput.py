@@ -20,4 +20,4 @@ for line2 in linelist:
     outfile.write("\n")
 
 
-print(*outlist, sep = "\n")
+#print(*outlist, sep = "\n")
