@@ -6,3 +6,5 @@ you need to put the websites "main id="maincontent" class="page-main"" html elem
 run terpinput, it will output outlinks.txt
 
 run terpscraper, it will use outlinks.txt as input and output coalist.txt
+
+terppdf currently only takes a pdf from your files and extracts all the text
