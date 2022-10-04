@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 urlList = list()
 list = list()
 
-coalist = open("coalist.txt", "a")
+
 
 
 for URL in fileinput.input(files = 'outlinks.txt'):
@@ -31,11 +31,13 @@ for URL in urlList:
             attrs={'href': re.compile("^https://www.trulieve.com/files")}):
     # display the actual urls
     #print(link.get('href'))
-        list.append(link.get('href'))
+        thisurl = link.get('href')
+        if thisurl in list:
+            continue
+        list.append(thisurl)
 
 #print(coalink)
-for URL in list:
-    coalist.write(URL)
-    coalist.write("\n")
+with open('coalist.txt','w') as coalist:
+    coalist.write( '\n'.join( list ) )
 
 print(list)
